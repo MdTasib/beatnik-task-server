@@ -5,11 +5,15 @@ const port = process.env.PORT || 5000;
 const { connectToServer } = require("./utils/dbConnected");
 const errorHandler = require("./middlewares/errorHandler");
 const app = express();
+const questionsRoute = require("./routes/questions.route");
 
 // MIDDLEWARES
 app.use(cors());
 app.use(express.json());
 app.use(errorHandler);
+
+// ROUTES
+app.use(questionsRoute);
 
 // DATABASE CONNECTED
 connectToServer(err => {
