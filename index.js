@@ -6,6 +6,8 @@ const { connectToServer } = require("./utils/dbConnected");
 const errorHandler = require("./middlewares/errorHandler");
 const app = express();
 const questionsRoute = require("./routes/questions.route");
+const slidersRoute = require("./routes/slider.route");
+const productRoute = require("./routes/product.route");
 
 // MIDDLEWARES
 app.use(cors());
@@ -14,6 +16,8 @@ app.use(errorHandler);
 
 // ROUTES
 app.use(questionsRoute);
+app.use(slidersRoute);
+app.use(productRoute);
 
 // DATABASE CONNECTED
 connectToServer(err => {
