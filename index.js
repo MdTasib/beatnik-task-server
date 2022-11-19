@@ -8,6 +8,7 @@ const app = express();
 const questionsRoute = require("./routes/questions.route");
 const slidersRoute = require("./routes/slider.route");
 const productRoute = require("./routes/product.route");
+const rateRoute = require("./routes/rate.route");
 
 // MIDDLEWARES
 app.use(cors());
@@ -18,6 +19,7 @@ app.use(errorHandler);
 app.use(questionsRoute);
 app.use(slidersRoute);
 app.use(productRoute);
+app.use(rateRoute);
 
 // DATABASE CONNECTED
 connectToServer(err => {
